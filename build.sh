@@ -2,15 +2,15 @@
 #Script to build buildroot configuration
 #Author: Siddhant Jajoo
 
+cd "$(dirname "$0")"
+set -e
+
 source shared.sh
 
 EXTERNAL_REL_BUILDROOT=../base_external
 git submodule init
 git submodule sync
-git submodule update
-
-set -e 
-cd `dirname $0`
+git submodule update --init --recursive
 
 if [ ! -e buildroot/.config ]
 then
