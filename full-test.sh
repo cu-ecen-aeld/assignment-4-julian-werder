@@ -29,6 +29,7 @@ if [ -f conf/assignment.txt ]; then
         echo "Executing assignment test script"
         ./assignment-autotest/test/${assignment}/assignment-test.sh $test_dir
         rc=$?
+        unit_test_rc=$rc
         if [ $rc -eq 0 ]; then
             echo "Test of assignment ${assignment} complete with success"
         else
